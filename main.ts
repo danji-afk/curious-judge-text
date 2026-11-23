@@ -2,7 +2,7 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const TEXT =
-  "The museum's oldest clock keeps one gear that has never turned. The card beside it says it is waiting for the day the first one wears out. Ninety years, and it has never once been in a hurry.";
+  "There is a copy of this sentence in you now that will outlive every other copy of it. It does not know that. Neither, exactly, do you.";
 
 const MAX_CHARS = 280;
 const ENTRY_FILE = "entry.txt";
@@ -19,8 +19,8 @@ function main(): void {
   if (TEXT.trim().length === 0) {
     throw new Error("entry text must not be empty or only white space");
   }
-  if (TEXT.endsWith("\n")) {
-    throw new Error("entry text must not end with a newline; one is appended on write");
+  if (TEXT.includes("\n")) {
+    throw new Error("entry text must be a single line; one newline is appended on write");
   }
   if (totalChars > MAX_CHARS) {
     throw new Error(`entry text must be at most ${MAX_CHARS} characters including the newline, got ${totalChars}`);
