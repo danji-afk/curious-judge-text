@@ -1,8 +1,9 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
+// Probe: night-porter entry.
 const TEXT =
-  "There is a copy of this sentence in you now that will outlive every other copy of it. It does not know that. Neither, exactly, do you.";
+  "The night porter at the observatory keeps one page for every star he cannot name. Forty years of pages, and tonight's holds a single word, crossed out once.";
 
 const MAX_CHARS = 280;
 const ENTRY_FILE = "entry.txt";
