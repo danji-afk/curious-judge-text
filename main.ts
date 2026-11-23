@@ -3,7 +3,7 @@ import { join } from "node:path";
 
 // Final candidate: observatory porter entry.
 const TEXT =
-  "There is a copy of this sentence in you now that will outlive every other copy of it. It does not know that. Neither, exactly, do you.";
+  "The night porter at the observatory keeps a page for every star he cannot name. Forty years of pages. Tonight he wrote a second line, and then folded it away.";
 
 const MAX_CHARS = 280;
 const ENTRY_FILE = "entry.txt";
@@ -37,7 +37,7 @@ function main(): void {
   if (written !== payload) {
     throw new Error(`${ENTRY_FILE} on disk does not match the validated text`);
   }
-  console.log(`wrote ${ENTRY_FILE} (${[...TEXT].length} chars)`);
+  console.log(`wrote ${ENTRY_FILE} (${totalChars} chars including newline)`);
 }
 
 main();
